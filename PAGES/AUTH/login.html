@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ONEPWS | Login</title>
+
+    <link rel="stylesheet"
+          href="login.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         LOGIN PAGE
+         ONEPWS Enterprise Project Management System
+    ====================================================== -->
+
+    <div class="login-page">
+
+        <!-- =================================================
+             LEFT SIDE
+        ================================================== -->
+
+        <section class="login-brand">
+
+            <div class="brand-content">
+
+                <img
+                    src="../../assets/images/ONEPWS%20LOGO.png"
+                    alt="ONEPWS Logo"
+                    class="brand-logo">
+
+                <h1>
+                    ONEPWS
+                </h1>
+
+                <h2>
+                    Enterprise Project
+                    Management System
+                </h2>
+
+                <p>
+                    Manage projects, tasks, progress,
+                    teams and reports from one centralized
+                    enterprise platform.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RIGHT SIDE
+        ================================================== -->
+
+        <section class="login-section">
+
+            <div class="login-card">
+
+                <div class="login-header">
+
+                    <img
+                        src="../../assets/images/ONEPWS%20LOGO.png"
+                        alt="ONEPWS Logo"
+                        class="login-logo">
+
+                    <h1>
+                        Welcome Back
+                    </h1>
+
+                    <p>
+                        Sign in to continue to ONEPWS
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     LOGIN FORM
+                ================================================== -->
+
+                <form id="loginForm">
+
+                    <!-- USER ID -->
+
+                    <div class="form-group">
+
+                        <label for="userId">
+                            User ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="userId"
+                            name="userId"
+                            placeholder="Enter your User ID"
+                            autocomplete="username"
+                            required>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required>
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle"
+                                aria-label="Show password">
+
+                                👁
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- REMEMBER ME / FORGOT PASSWORD -->
+
+                    <div class="login-options">
+
+                        <label class="remember-me">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe">
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+                        <button
+                            type="button"
+                            id="forgotPasswordBtn"
+                            class="forgot-password">
+
+                            Forgot Password?
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- ERROR MESSAGE -->
+
+                    <div
+                        id="loginMessage"
+                        class="login-message"
+                        role="alert">
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        id="loginBtn"
+                        class="login-btn">
+
+                        <span>
+                            Sign In
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <!-- =================================================
+                     FOOTER
+                ================================================== -->
+
+                <div class="login-footer">
+
+                    <p>
+                        ONEPWS Enterprise Project Management System
+                    </p>
+
+                    <span>
+                        Authorized users only
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
