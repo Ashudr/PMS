@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ONEPWS | Dashboard</title>
+
+    <!-- COMMON PMS STYLE -->
+    <link rel="stylesheet"
+          href="../../assets/css/common.css">
+
+    <!-- DASHBOARD STYLE -->
+    <link rel="stylesheet"
+          href="dashboard.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-wrapper">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="top-header">
+
+        <div class="header-left">
+
+            <img
+                src="../../assets/images/ONEPWS LOGO.png"
+                alt="ONEPWS"
+                class="logo">
+
+            <div>
+
+                <h2>ONEPWS</h2>
+
+                <span>
+                    Enterprise Project Management System
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="globalSearch"
+                placeholder="Search projects, tasks, customers...">
+
+        </div>
+
+
+        <!-- HEADER RIGHT -->
+
+        <div class="header-right">
+
+            <button
+                class="icon-button"
+                id="notificationBtn"
+                title="Notifications">
+
+                <i class="fa-solid fa-bell"></i>
+
+                <span class="notification-count">
+                    3
+                </span>
+
+            </button>
+
+
+            <div class="profile-box">
+
+                <div class="profile-info">
+
+                    <strong id="loggedUser">
+                        ONEPWS
+                    </strong>
+
+                    <small id="loggedRole">
+                        User
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         DASHBOARD MAIN
+    ====================================================== -->
+
+    <div class="dashboard-main">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+
+            <div class="menu-title">
+                MAIN MENU
+            </div>
+
+
+            <a
+                href="dashboard.html"
+                class="menu-item active">
+
+                <i class="fa-solid fa-table-columns"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="../projectboard/projectboard.html"
+                class="menu-item">
+
+                <i class="fa-solid fa-diagram-project"></i>
+
+                <span>
+                    Project Board
+                </span>
+
+            </a>
+
+
+            <a
+                href="../progressboard/progressboard.html"
+                class="menu-item">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>
+                    Progress Board
+                </span>
+
+            </a>
+
+
+            <a
+                href="../projectwizard/projectwizard.html"
+                class="menu-item">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                <span>
+                    Project Wizard
+                </span>
+
+            </a>
+
+
+            <a
+                href="../taskboard/taskboard.html"
+                class="menu-item">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <span>
+                    Task Board
+                </span>
+
+            </a>
+
+
+            <a
+                href="../reports/reports.html"
+                class="menu-item">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="../settings/settings.html"
+                class="menu-item">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="menu-item logout"
+                id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             DASHBOARD CONTENT
+        ================================================== -->
+
+        <main class="dashboard-content">
+
+
+            <!-- =================================================
+                 WELCOME BANNER
+            ================================================== -->
+
+            <section class="welcome-banner">
+
+                <div>
+
+                    <h1>
+                        Welcome Back, <span id="welcomeUser">ONEPWS</span>
+                    </h1>
+
+                    <p>
+                        Here's what's happening across your projects today.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    id="createProjectBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Create New Project
+
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 KPI GRID
+            ================================================== -->
+
+            <section class="kpi-grid">
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon blue">
+
+                        <i class="fa-solid fa-diagram-project"></i>
+
+                    </div>
+
+                    <div class="kpi-content">
+
+                        <h2>
+                            24
+                        </h2>
+
+                        <p>
+                            Active Projects
+                        </p>
+
+                        <span class="positive">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            12% this month
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon green">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                    </div>
+
+                    <div class="kpi-content">
+
+                        <h2>
+                            18
+                        </h2>
+
+                        <p>
+                            Completed Projects
+                        </p>
+
+                        <span class="positive">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            8% this month
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon orange">
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    </div>
+
+                    <div class="kpi-content">
+
+                        <h2>
+                            4
+                        </h2>
+
+                        <p>
+                            Critical Projects
+                        </p>
+
+                        <span class="negative">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            Needs attention
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon purple">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <div class="kpi-content">
+
+                        <h2>
+                            32
+                        </h2>
+
+                        <p>
+                            Team Members
+                        </p>
+
+                        <span class="positive">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            4 new members
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MIDDLE SECTION
+            ================================================== -->
+
+            <section class="dashboard-middle">
+
+
+                <!-- PROJECT STATUS -->
+
+                <div class="chart-panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Project Status
+                        </h2>
+
+                        <button
+                            class="panel-button"
+                            id="viewProjectBoardBtn">
+
+                            View Projects
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="chart-placeholder">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                        <h3>
+                            Project Status Overview
+                        </h3>
+
+                        <p>
+                            Active • Completed • Critical • On Hold
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="quick-panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        class="action-btn"
+                        id="createTaskBtn">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Create New Task
+
+                    </button>
+
+
+                    <button
+                        class="action-btn"
+                        id="addCustomerBtn">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Add Customer
+
+                    </button>
+
+
+                    <button
+                        class="action-btn"
+                        id="viewReportsBtn">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                        View Reports
+
+                    </button>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RECENT PROJECTS
+            ================================================== -->
+
+            <section class="dashboard-bottom">
+
+                <div class="projects-panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Recent Projects
+                        </h2>
+
+                        <button
+                            class="panel-button"
+                            id="viewAllProjectsBtn">
+
+                            View All
+
+                        </button>
+
+                    </div>
+
+
+                    <table class="project-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Project
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Progress
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    Taj Hotel Mumbai
+                                </td>
+
+                                <td>
+                                    Taj Group
+                                </td>
+
+                                <td>
+
+                                    <div class="progress-bar">
+
+                                        <div
+                                            class="progress-fill"
+                                            style="width:72%;">
+
+                                        </div>
+
+                                    </div>
+
+                                    72%
+
+                                </td>
+
+                                <td>
+
+                                    <span class="status running">
+                                        Running
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    AIIMS Delhi
+                                </td>
+
+                                <td>
+                                    AIIMS
+                                </td>
+
+                                <td>
+
+                                    <div class="progress-bar">
+
+                                        <div
+                                            class="progress-fill"
+                                            style="width:58%;">
+
+                                        </div>
+
+                                    </div>
+
+                                    58%
+
+                                </td>
+
+                                <td>
+
+                                    <span class="status design">
+                                        Design
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Infosys Bangalore
+                                </td>
+
+                                <td>
+                                    Infosys
+                                </td>
+
+                                <td>
+
+                                    <div class="progress-bar">
+
+                                        <div
+                                            class="progress-fill"
+                                            style="width:84%;">
+
+                                        </div>
+
+                                    </div>
+
+                                    84%
+
+                                </td>
+
+                                <td>
+
+                                    <span class="status qc">
+                                        Quality Check
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TEAM + ACTIVITIES
+            ================================================== -->
+
+            <section class="analytics-grid">
+
+
+                <div class="analytics-card">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Team Workload
+                        </h2>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Ashu
+                        </span>
+
+                        <strong>
+                            12 Tasks
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Rahul
+                        </span>
+
+                        <strong>
+                            9 Tasks
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Amit
+                        </span>
+
+                        <strong>
+                            7 Tasks
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Neha
+                        </span>
+
+                        <strong>
+                            5 Tasks
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="analytics-card">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Recent Activities
+                        </h2>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Project "Taj Hotel Mumbai" created
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Drawing Revision D03 uploaded
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Manufacturing started for AIIMS Delhi
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Dispatch approved for Infosys Bangalore
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SUMMARY + DEADLINES
+            ================================================== -->
+
+            <section class="footer-grid">
+
+
+                <div class="footer-panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Project Summary
+                        </h2>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            RFQ
+                        </span>
+
+                        <strong>
+                            5
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Information Missing
+                        </span>
+
+                        <strong>
+                            3
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Work In Progress
+                        </span>
+
+                        <strong>
+                            12
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Quality Check
+                        </span>
+
+                        <strong>
+                            4
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Critical
+                        </span>
+
+                        <strong class="danger">
+                            2
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="footer-panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Upcoming Deadlines
+                        </h2>
+
+                    </div>
+
+
+                    <div class="deadline-item">
+
+                        <strong>
+                            Taj Hotel Mumbai
+                        </strong>
+
+                        <small>
+                            Drawing submission — Tomorrow
+                        </small>
+
+                    </div>
+
+
+                    <div class="deadline-item">
+
+                        <strong>
+                            AIIMS Delhi
+                        </strong>
+
+                        <small>
+                            Manufacturing approval — 3 days
+                        </small>
+
+                    </div>
+
+
+                    <div class="deadline-item">
+
+                        <strong>
+                            Infosys Bangalore
+                        </strong>
+
+                        <small>
+                            Dispatch — 5 days
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SCHEDULE + ALERTS
+            ================================================== -->
+
+            <section class="footer-grid">
+
+
+                <div class="footer-panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Today's Schedule
+                        </h2>
+
+                    </div>
+
+
+                    <div class="schedule-item">
+
+                        <strong>
+                            09:30
+                        </strong>
+
+                        <span>
+                            Project Review — Taj Hotel Mumbai
+                        </span>
+
+                    </div>
+
+
+                    <div class="schedule-item">
+
+                        <strong>
+                            11:00
+                        </strong>
+
+                        <span>
+                            Design Meeting — AIIMS Delhi
+                        </span>
+
+                    </div>
+
+
+                    <div class="schedule-item">
+
+                        <strong>
+                            14:00
+                        </strong>
+
+                        <span>
+                            Manufacturing Review
+                        </span>
+
+                    </div>
+
+
+                    <div class="schedule-item">
+
+                        <strong>
+                            16:30
+                        </strong>
+
+                        <span>
+                            Dispatch Planning
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="footer-panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Critical Alerts
+                        </h2>
+
+                    </div>
+
+
+                    <div class="alert-item">
+
+                        <strong>
+                            ⚠ Taj Hotel Mumbai
+                        </strong>
+
+                        <br>
+
+                        Drawing approval delayed.
+
+                    </div>
+
+
+                    <div class="alert-item">
+
+                        <strong>
+                            ⚠ AIIMS Delhi
+                        </strong>
+
+                        <br>
+
+                        Manufacturing information missing.
+
+                    </div>
+
+
+                    <div class="alert-item">
+
+                        <strong>
+                            ⚠ Infosys Bangalore
+                        </strong>
+
+                        <br>
+
+                        Dispatch approval pending.
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="../../assets/js/database.js"></script>
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>
