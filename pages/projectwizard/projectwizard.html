@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ONEPWS | Project Wizard</title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- PROJECT WIZARD CSS -->
+
+    <link rel="stylesheet"
+          href="../../assets/css/projectwizard.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="top-header">
+
+    <div class="logo-area">
+
+        <img src="../../assets/images/onepws-logo.png"
+             alt="ONEPWS Logo">
+
+        <div>
+
+            <h2>ONEPWS</h2>
+
+            <p>
+                Enterprise Project Management System
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="header-actions">
+
+        <input
+            type="text"
+            placeholder="Search Project...">
+
+        <button
+            id="notificationBtn"
+            title="Notifications">
+
+            <i class="fa-solid fa-bell"></i>
+
+        </button>
+
+
+        <button id="profileBtn">
+
+            Ashu
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     APPLICATION CONTAINER
+===================================================== -->
+
+<div class="app-container">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="menu-title">
+
+            MAIN MENU
+
+        </div>
+
+
+        <a class="menu-item"
+           href="../dashboard/dashboard.html">
+
+            <i class="fa-solid fa-table-columns"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a class="menu-item"
+           href="../projectboard/projectboard.html">
+
+            <i class="fa-solid fa-diagram-project"></i>
+
+            <span>Project Board</span>
+
+        </a>
+
+
+        <a class="menu-item"
+           href="../progressboard/progressboard.html">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>Progress Board</span>
+
+        </a>
+
+
+        <a class="menu-item active"
+           href="../projectwizard/projectwizard.html">
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            <span>Project Wizard</span>
+
+        </a>
+
+
+        <a class="menu-item"
+           href="../taskboard/taskboard.html">
+
+            <i class="fa-solid fa-list-check"></i>
+
+            <span>Task Board</span>
+
+        </a>
+
+
+        <a class="menu-item"
+           href="../reports/reports.html">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            <span>Reports</span>
+
+        </a>
+
+
+        <a class="menu-item"
+           href="../settings/settings.html">
+
+            <i class="fa-solid fa-gear"></i>
+
+            <span>Settings</span>
+
+        </a>
+
+
+        <a class="menu-item logout"
+           href="#"
+           id="logoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>Logout</span>
+
+        </a>
+
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <div class="wizard-container">
+
+
+            <!-- =========================================
+                 PAGE HEADER
+            ========================================== -->
+
+            <section class="wizard-header">
+
+                <div>
+
+                    <h1>Create New Project</h1>
+
+                    <p>
+                        Create and configure a new project
+                        step by step.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 WIZARD PROGRESS
+            ========================================== -->
+
+            <div class="wizard-progress">
+
+
+                <div class="wizard-step active">
+
+                    <div class="circle">
+                        1
+                    </div>
+
+                    <span>
+                        Template
+                    </span>
+
+                </div>
+
+
+                <div class="line"></div>
+
+
+                <div class="wizard-step">
+
+                    <div class="circle">
+                        2
+                    </div>
+
+                    <span>
+                        Project Details
+                    </span>
+
+                </div>
+
+
+                <div class="line"></div>
+
+
+                <div class="wizard-step">
+
+                    <div class="circle">
+                        3
+                    </div>
+
+                    <span>
+                        Modules
+                    </span>
+
+                </div>
+
+
+                <div class="line"></div>
+
+
+                <div class="wizard-step">
+
+                    <div class="circle">
+                        4
+                    </div>
+
+                    <span>
+                        Review
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 STEP 1
+            ========================================== -->
+
+            <div class="step-page active-page"
+                 id="step1">
+
+
+                <h2>
+                    Select Project Template
+                </h2>
+
+
+                <p class="step-description">
+
+                    Select the project type to automatically
+                    load recommended modules and workflow.
+
+                </p>
+
+
+                <div class="template-grid">
+
+
+                    <div class="template-card template-btn"
+                         data-template="Office">
+
+                        <div class="template-icon">
+                            🏢
+                        </div>
+
+                        <h3>Office</h3>
+
+                        <p>Corporate Workspace</p>
+
+                        <ul>
+
+                            <li>✓ Ceiling</li>
+                            <li>✓ Flooring</li>
+                            <li>✓ Furniture</li>
+                            <li>✓ Electrical</li>
+
+                        </ul>
+
+                        <div class="template-footer">
+
+                            Duration : 120 Days
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="template-card template-btn"
+                         data-template="Retail">
+
+                        <div class="template-icon">
+                            🛍
+                        </div>
+
+                        <h3>Retail</h3>
+
+                        <p>Showroom & Mall</p>
+
+                        <ul>
+
+                            <li>✓ Display</li>
+                            <li>✓ Signage</li>
+                            <li>✓ Furniture</li>
+                            <li>✓ Lighting</li>
+
+                        </ul>
+
+                        <div class="template-footer">
+
+                            Duration : 90 Days
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="template-card template-btn"
+                         data-template="Hospital">
+
+                        <div class="template-icon">
+                            🏥
+                        </div>
+
+                        <h3>Hospital</h3>
+
+                        <p>Healthcare Facility</p>
+
+                        <ul>
+
+                            <li>✓ Medical Gas</li>
+                            <li>✓ HVAC</li>
+                            <li>✓ Clean Room</li>
+                            <li>✓ Flooring</li>
+
+                        </ul>
+
+                        <div class="template-footer">
+
+                            Duration : 240 Days
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="template-card template-btn"
+                         data-template="Hotel">
+
+                        <div class="template-icon">
+                            🏨
+                        </div>
+
+                        <h3>Hotel</h3>
+
+                        <p>Hospitality Project</p>
+
+                        <ul>
+
+                            <li>✓ Guest Rooms</li>
+                            <li>✓ Lobby</li>
+                            <li>✓ Restaurant</li>
+                            <li>✓ Lighting</li>
+
+                        </ul>
+
+                        <div class="template-footer">
+
+                            Duration : 300 Days
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="template-card template-btn"
+                         data-template="Industrial">
+
+                        <div class="template-icon">
+                            🏭
+                        </div>
+
+                        <h3>Industrial</h3>
+
+                        <p>Factory & Warehouse</p>
+
+                        <ul>
+
+                            <li>✓ Structure</li>
+                            <li>✓ Electrical</li>
+                            <li>✓ Flooring</li>
+                            <li>✓ Utility</li>
+
+                        </ul>
+
+                        <div class="template-footer">
+
+                            Duration : 180 Days
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="template-card template-btn"
+                         data-template="Custom">
+
+                        <div class="template-icon">
+                            🛠
+                        </div>
+
+                        <h3>Custom</h3>
+
+                        <p>User Defined</p>
+
+                        <ul>
+
+                            <li>✓ Custom Modules</li>
+                            <li>✓ Flexible Workflow</li>
+                            <li>✓ Custom Tasks</li>
+                            <li>✓ Custom Duration</li>
+                            <li>✓ Ceiling</li>
+                            <li>✓ Panelling</li>
+                            <li>✓ Electrical</li>
+                            <li>✓ Flooring</li>
+                            <li>✓ HVAC</li>
+
+                        </ul>
+
+                        <div class="template-footer">
+
+                            User Defined
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 STEP 2
+            ========================================== -->
+
+            <div class="step-page"
+                 id="step2">
+
+
+                <section class="wizard-step-content">
+
+
+                    <h2>
+                        Project Details
+                    </h2>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Project Number
+                            </label>
+
+                            <input type="text"
+                                   id="projectNumber"
+                                   readonly>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Project Name
+                            </label>
+
+                            <input type="text"
+                                   id="projectName"
+                                   placeholder="Enter Project Name">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Customer
+                            </label>
+
+                            <select id="customer">
+
+                                <option value="">
+                                    Select Customer
+                                </option>
+
+                                <option>
+                                    ABC Pvt Ltd
+                                </option>
+
+                                <option>
+                                    XYZ Industries
+                                </option>
+
+                                <option>
+                                    DEF Corporation
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Business Unit
+                            </label>
+
+                            <select id="businessUnit">
+
+                                <option>Corporate</option>
+                                <option>Retail</option>
+                                <option>Healthcare</option>
+                                <option>Hospitality</option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Project Manager
+                            </label>
+
+                            <select id="projectManager">
+
+                                <option>Ashu</option>
+                                <option>Manager 2</option>
+                                <option>Manager 3</option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Design Head
+                            </label>
+
+                            <select id="designHead">
+
+                                <option>
+                                    Select Design Head
+                                </option>
+
+                                <option>
+                                    Design Head 1
+                                </option>
+
+                                <option>
+                                    Design Head 2
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Priority
+                            </label>
+
+                            <select id="priority">
+
+                                <option>Low</option>
+
+                                <option selected>
+                                    Medium
+                                </option>
+
+                                <option>High</option>
+
+                                <option>Critical</option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Start Date
+                            </label>
+
+                            <input type="date"
+                                   id="startDate">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Target Completion
+                            </label>
+
+                            <input type="date"
+                                   id="endDate">
+
+                        </div>
+
+
+
+                        <div class="form-group full-width">
+
+                            <label>
+                                Description
+                            </label>
+
+                            <textarea
+                                id="description"
+                                rows="4"
+                                placeholder="Project Description"></textarea>
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 STEP 3
+            ========================================== -->
+
+            <div class="step-page"
+                 id="step3">
+
+
+                <h2>
+                    Project Modules
+                </h2>
+
+
+                <p class="step-description">
+
+                    Select the modules required
+                    for this project.
+
+                </p>
+
+
+                <div class="module-grid"
+                     id="moduleContainer">
+
+                    <!-- MODULES FROM JAVASCRIPT -->
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 STEP 4
+            ========================================== -->
+
+            <div class="step-page"
+                 id="step4">
+
+
+                <h2>
+                    Review Project
+                </h2>
+
+
+                <p class="step-description">
+
+                    Please verify the project information
+                    before creating the project.
+
+                </p>
+
+
+                <div class="review-card">
+
+
+                    <table class="review-table">
+
+
+                        <tr>
+
+                            <td>Template</td>
+
+                            <td id="reviewTemplate">
+                                -
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Project Number</td>
+
+                            <td id="reviewProjectNumber">
+                                -
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Project Name</td>
+
+                            <td id="reviewProjectName">
+                                -
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Customer</td>
+
+                            <td id="reviewCustomer">
+                                -
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Business Unit</td>
+
+                            <td id="reviewBusinessUnit">
+                                -
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Project Manager</td>
+
+                            <td id="reviewProjectManager">
+                                -
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Design Head</td>
+
+                            <td id="reviewDesignHead">
+                                -
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Priority</td>
+
+                            <td id="reviewPriority">
+                                -
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Start Date</td>
+
+                            <td id="reviewStartDate">
+                                -
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>End Date</td>
+
+                            <td id="reviewEndDate">
+                                -
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Description</td>
+
+                            <td id="reviewDescription">
+                                -
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>Modules</td>
+
+                            <td id="reviewModules">
+                                -
+                            </td>
+
+                        </tr>
+
+
+                    </table>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 WIZARD BUTTONS
+            ========================================== -->
+
+            <div class="wizard-buttons">
+
+
+                <button id="cancelBtn">
+
+                    Cancel
+
+                </button>
+
+
+                <button id="prevBtn">
+
+                    ← Previous
+
+                </button>
+
+
+                <button id="nextBtn">
+
+                    Next →
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../../assets/js/database.js"></script>
+
+<script src="../../assets/js/projectwizard.js"></script>
+
+
+</body>
+
+</html>
