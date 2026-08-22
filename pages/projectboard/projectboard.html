@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -10,7 +11,11 @@
 
     <title>ONEPWS | Project Board</title>
 
-    <!-- COMMON FONT / ICONS -->
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
 
@@ -21,20 +26,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
           rel="stylesheet">
 
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- =================================================
-     COMMON CSS
-================================================= -->
 
-<link rel="stylesheet" href="../../projectbard/projectboard.css">
+    <!-- =====================================================
+         PROJECT BOARD CSS
+    ====================================================== -->
 
-<!-- =================================================
-     PROJECT BOARD CSS
-================================================= -->
-
-<link rel="stylesheet" href="../../assets/css/projectboard.css">
+    <link rel="stylesheet"
+          href="projectboard.css">
 
 </head>
 
@@ -42,874 +48,350 @@
 <body>
 
 
-<!-- =========================================================
-     PROJECT BOARD WRAPPER
-========================================================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-<div class="projectboard-wrapper">
+<header class="top-header">
+
+    <div class="logo-area">
+
+        <img src="../../assets/images/onepws-logo.png"
+             alt="ONEPWS Logo">
+
+        <div>
+
+            <h2>ONEPWS</h2>
+
+            <p>
+                Enterprise Project Management System
+            </p>
+
+        </div>
+
+    </div>
 
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
+    <div class="header-actions">
 
-    <header class="top-header">
+        <input
+            type="text"
+            id="searchProject"
+            placeholder="Search Project...">
+
+        <button
+            id="notificationBtn"
+            title="Notifications">
+
+            <i class="fa-solid fa-bell"></i>
+
+        </button>
 
 
-        <!-- HEADER LEFT -->
+        <button
+            id="profileBtn">
 
-        <div class="header-left">
+            Ashu
+            <i class="fa-solid fa-chevron-down"></i>
 
-            <img
-                src="../../assets/images/onepws-logo.png"
-                alt="ONEPWS Logo"
-                class="logo">
+        </button>
 
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     APPLICATION AREA
+===================================================== -->
+
+<div class="app-container">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="menu-title">
+
+            MAIN MENU
+
+        </div>
+
+
+        <a class="menu-item"
+           href="../dashboard/dashboard.html">
+
+            <i class="fa-solid fa-table-columns"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a class="menu-item active"
+           href="../projectboard/projectboard.html">
+
+            <i class="fa-solid fa-diagram-project"></i>
+
+            <span>Project Board</span>
+
+        </a>
+
+
+        <a class="menu-item"
+           href="../progressboard/progressboard.html">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>Progress Board</span>
+
+        </a>
+
+
+        <a class="menu-item"
+           href="../projectwizard/projectwizard.html">
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            <span>Project Wizard</span>
+
+        </a>
+
+
+        <a class="menu-item"
+           href="../taskboard/taskboard.html">
+
+            <i class="fa-solid fa-list-check"></i>
+
+            <span>Task Board</span>
+
+        </a>
+
+
+        <a class="menu-item"
+           href="../reports/reports.html">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            <span>Reports</span>
+
+        </a>
+
+
+        <a class="menu-item"
+           href="../settings/settings.html">
+
+            <i class="fa-solid fa-gear"></i>
+
+            <span>Settings</span>
+
+        </a>
+
+
+        <a class="menu-item logout"
+           href="#"
+           id="logoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            <span>Logout</span>
+
+        </a>
+
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =============================================
+             PAGE HEADER
+        ============================================== -->
+
+        <section class="page-header">
 
             <div>
 
-                <h2>
-                    ONEPWS
-                </h2>
-
-                <span>
-                    Enterprise Project Management System
-                </span>
+                <h1>Project Board</h1>
 
             </div>
 
-        </div>
 
+            <button id="newProject">
 
-        <!-- SEARCH -->
+                <i class="fa-solid fa-plus"></i>
 
-        <div class="search-box">
-
-            <i class="fa-solid fa-magnifying-glass"></i>
-
-            <input
-                type="text"
-                id="searchProject"
-                placeholder="Search projects...">
-
-        </div>
-
-
-        <!-- HEADER RIGHT -->
-
-        <div class="header-right">
-
-
-            <button
-                class="icon-button"
-                id="notificationBtn"
-                title="Notifications">
-
-                <i class="fa-regular fa-bell"></i>
-
-                <span class="notification-count">
-                    3
-                </span>
+                New Project
 
             </button>
 
+        </section>
 
-            <div class="profile-box">
 
-                <div class="profile-info">
 
-                    <strong>
-                        Ashu
-                    </strong>
+        <!-- =============================================
+             KPI SECTION
+        ============================================== -->
 
-                    <small>
-                        Administrator
-                    </small>
+        <section class="kpi-container">
 
-                </div>
+
+            <div class="kpi-box">
+
+                <h3>Active Projects</h3>
+
+                <h2 id="activeProjects">
+                    18
+                </h2>
 
             </div>
 
-        </div>
 
-    </header>
+            <div class="kpi-box">
 
+                <h3>Completed</h3>
 
+                <h2 id="completedProjects">
+                    12
+                </h2>
 
-    <!-- =====================================================
-         MAIN AREA
-    ====================================================== -->
-
-    <div class="projectboard-main">
-
-
-        <!-- =================================================
-             SIDEBAR
-        ================================================== -->
-
-        <aside class="sidebar">
-
-
-            <div class="menu-title">
-                MAIN MENU
             </div>
 
 
-            <!-- DASHBOARD -->
+            <div class="kpi-box">
 
-            <a
-                class="menu-item"
-                href="../dashboard/dashboard.html">
+                <h3>Critical</h3>
 
-                <i class="fa-solid fa-table-columns"></i>
+                <h2 id="criticalProjects">
+                    2
+                </h2>
 
-                <span>
-                    Dashboard
-                </span>
+            </div>
 
-            </a>
 
+            <div class="kpi-box">
 
-            <!-- PROJECT BOARD -->
+                <h3>On Hold</h3>
 
-            <a
-                class="menu-item active"
-                href="../projectboard/projectboard.html">
+                <h2 id="holdProjects">
+                    3
+                </h2>
 
-                <i class="fa-solid fa-diagram-project"></i>
+            </div>
 
-                <span>
-                    Project Board
-                </span>
 
-            </a>
+        </section>
 
 
-            <!-- PROGRESS BOARD -->
 
-            <a
-                class="menu-item"
-                href="../progressboard/progressboard.html">
+        <!-- =============================================
+             FILTER SECTION
+        ============================================== -->
 
-                <i class="fa-solid fa-chart-line"></i>
+        <section class="filter-row">
 
-                <span>
-                    Progress Board
-                </span>
 
-            </a>
+            <select id="financialYearFilter">
 
+                <option value="">
+                    Financial Year
+                </option>
 
-            <!-- PROJECT WIZARD -->
+                <option value="2026-27">
+                    2026-27
+                </option>
 
-            <a
-                class="menu-item"
-                href="../projectwizard/projectwizard.html">
+                <option value="2025-26">
+                    2025-26
+                </option>
 
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </select>
 
-                <span>
-                    Project Wizard
-                </span>
 
-            </a>
 
+            <select id="customerFilter">
 
-            <!-- TASK BOARD -->
+                <option value="">
+                    All Customers
+                </option>
 
-            <a
-                class="menu-item"
-                href="../taskboard/taskboard.html">
+            </select>
 
-                <i class="fa-solid fa-list-check"></i>
 
-                <span>
-                    Task Board
-                </span>
 
-            </a>
+            <select id="managerFilter">
 
+                <option value="">
+                    Project Manager
+                </option>
 
-            <!-- REPORTS -->
+            </select>
 
-            <a
-                class="menu-item"
-                href="../reports/reports.html">
 
-                <i class="fa-solid fa-chart-pie"></i>
 
-                <span>
-                    Reports
-                </span>
+            <select id="statusFilter">
 
-            </a>
+                <option value="">
+                    All Status
+                </option>
 
+                <option value="active">
+                    Active
+                </option>
 
-            <!-- SETTINGS -->
+                <option value="completed">
+                    Completed
+                </option>
 
-            <a
-                class="menu-item"
-                href="../settings/settings.html">
+                <option value="critical">
+                    Critical
+                </option>
 
-                <i class="fa-solid fa-gear"></i>
+                <option value="hold">
+                    On Hold
+                </option>
 
-                <span>
-                    Settings
-                </span>
+            </select>
 
-            </a>
 
+        </section>
 
-            <!-- LOGOUT -->
 
-            <a
-                class="menu-item logout"
-                href="#"
-                id="logoutBtn">
 
-                <i class="fa-solid fa-right-from-bracket"></i>
+        <!-- =============================================
+             PROJECT GRID
+        ============================================== -->
 
-                <span>
-                    Logout
-                </span>
+        <section class="project-grid"
+                 id="projectGrid">
 
-            </a>
+            <!-- PROJECT CARDS WILL COME FROM JS -->
 
+        </section>
 
-        </aside>
 
-
-
-        <!-- =================================================
-             CONTENT
-        ================================================== -->
-
-        <main class="projectboard-content">
-
-
-            <!-- PAGE HEADER -->
-
-            <section class="page-header">
-
-
-                <div>
-
-                    <h1>
-                        Project Board
-                    </h1>
-
-                    <p>
-                        Manage and monitor all active projects
-                    </p>
-
-                </div>
-
-
-                <button
-                    class="primary-btn"
-                    id="newProjectBtn">
-
-                    <i class="fa-solid fa-plus"></i>
-
-                    New Project
-
-                </button>
-
-
-            </section>
-
-
-
-            <!-- =================================================
-                 KPI CARDS
-            ================================================== -->
-
-            <section class="kpi-grid">
-
-
-                <!-- ACTIVE -->
-
-                <div class="kpi-card">
-
-                    <div class="kpi-icon blue">
-
-                        <i class="fa-solid fa-folder-open"></i>
-
-                    </div>
-
-                    <div class="kpi-content">
-
-                        <h2>
-                            18
-                        </h2>
-
-                        <p>
-                            Active Projects
-                        </p>
-
-                        <span class="positive">
-                            +4 this month
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- COMPLETED -->
-
-                <div class="kpi-card">
-
-                    <div class="kpi-icon green">
-
-                        <i class="fa-solid fa-circle-check"></i>
-
-                    </div>
-
-                    <div class="kpi-content">
-
-                        <h2>
-                            12
-                        </h2>
-
-                        <p>
-                            Completed
-                        </p>
-
-                        <span class="positive">
-                            +2 this month
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- CRITICAL -->
-
-                <div class="kpi-card">
-
-                    <div class="kpi-icon orange">
-
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-
-                    </div>
-
-                    <div class="kpi-content">
-
-                        <h2>
-                            2
-                        </h2>
-
-                        <p>
-                            Critical Projects
-                        </p>
-
-                        <span class="negative">
-                            Requires attention
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- ON HOLD -->
-
-                <div class="kpi-card">
-
-                    <div class="kpi-icon purple">
-
-                        <i class="fa-solid fa-pause"></i>
-
-                    </div>
-
-                    <div class="kpi-content">
-
-                        <h2>
-                            3
-                        </h2>
-
-                        <p>
-                            On Hold
-                        </p>
-
-                        <span>
-                            Under review
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-            </section>
-
-
-
-            <!-- =================================================
-                 FILTER BAR
-            ================================================== -->
-
-            <section class="filter-panel">
-
-
-                <select id="financialYearFilter">
-
-                    <option value="">
-                        Financial Year
-                    </option>
-
-                    <option>
-                        2026-27
-                    </option>
-
-                    <option>
-                        2025-26
-                    </option>
-
-                </select>
-
-
-                <select id="customerFilter">
-
-                    <option value="">
-                        Customer
-                    </option>
-
-                    <option>
-                        ABC Pvt Ltd
-                    </option>
-
-                    <option>
-                        Infosys
-                    </option>
-
-                    <option>
-                        AIIMS
-                    </option>
-
-                </select>
-
-
-                <select id="managerFilter">
-
-                    <option value="">
-                        Project Manager
-                    </option>
-
-                    <option>
-                        Ashu
-                    </option>
-
-                    <option>
-                        Rahul
-                    </option>
-
-                    <option>
-                        Amit
-                    </option>
-
-                </select>
-
-
-                <select id="statusFilter">
-
-                    <option value="">
-                        Status
-                    </option>
-
-                    <option>
-                        Running
-                    </option>
-
-                    <option>
-                        Design
-                    </option>
-
-                    <option>
-                        Quality Check
-                    </option>
-
-                    <option>
-                        Manufacturing
-                    </option>
-
-                    <option>
-                        On Hold
-                    </option>
-
-                    <option>
-                        Completed
-                    </option>
-
-                </select>
-
-
-                <button
-                    class="clear-filter"
-                    id="clearFiltersBtn">
-
-                    <i class="fa-solid fa-rotate-left"></i>
-
-                    Clear
-
-                </button>
-
-
-            </section>
-
-
-
-            <!-- =================================================
-                 PROJECT GRID
-            ================================================== -->
-
-            <section
-                class="project-grid"
-                id="projectGrid">
-
-
-                <!-- PROJECT CARD 1 -->
-
-                <article
-                    class="project-card"
-                    data-project="Taj Hotel Mumbai">
-
-
-                    <div class="project-card-top">
-
-                        <span class="project-status running">
-                            Running
-                        </span>
-
-                        <button
-                            class="card-menu"
-                            title="More options">
-
-                            <i class="fa-solid fa-ellipsis"></i>
-
-                        </button>
-
-                    </div>
-
-
-                    <h2>
-                        Taj Hotel Mumbai
-                    </h2>
-
-                    <p class="project-number">
-                        SAP-2026-0001
-                    </p>
-
-
-                    <div class="project-details">
-
-                        <div>
-
-                            <i class="fa-solid fa-building"></i>
-
-                            <span>
-                                Taj Group
-                            </span>
-
-                        </div>
-
-                        <div>
-
-                            <i class="fa-solid fa-user"></i>
-
-                            <span>
-                                Ashu
-                            </span>
-
-                        </div>
-
-                        <div>
-
-                            <i class="fa-regular fa-calendar"></i>
-
-                            <span>
-                                15 Aug 2026
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="project-progress-info">
-
-                        <span>
-                            Progress
-                        </span>
-
-                        <strong>
-                            72%
-                        </strong>
-
-                    </div>
-
-
-                    <div class="project-progress">
-
-                        <div
-                            class="project-progress-fill"
-                            style="width:72%;">
-
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        class="open-project"
-                        data-project-id="SAP-2026-0001">
-
-                        Open Project
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </button>
-
-
-                </article>
-
-
-
-                <!-- PROJECT CARD 2 -->
-
-                <article
-                    class="project-card"
-                    data-project="AIIMS Delhi">
-
-
-                    <div class="project-card-top">
-
-                        <span class="project-status design">
-                            Design
-                        </span>
-
-                        <button
-                            class="card-menu">
-
-                            <i class="fa-solid fa-ellipsis"></i>
-
-                        </button>
-
-                    </div>
-
-
-                    <h2>
-                        AIIMS Delhi
-                    </h2>
-
-                    <p class="project-number">
-                        SAP-2026-0002
-                    </p>
-
-
-                    <div class="project-details">
-
-                        <div>
-
-                            <i class="fa-solid fa-building"></i>
-
-                            <span>
-                                AIIMS
-                            </span>
-
-                        </div>
-
-                        <div>
-
-                            <i class="fa-solid fa-user"></i>
-
-                            <span>
-                                Rahul
-                            </span>
-
-                        </div>
-
-                        <div>
-
-                            <i class="fa-regular fa-calendar"></i>
-
-                            <span>
-                                28 Aug 2026
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="project-progress-info">
-
-                        <span>
-                            Progress
-                        </span>
-
-                        <strong>
-                            45%
-                        </strong>
-
-                    </div>
-
-
-                    <div class="project-progress">
-
-                        <div
-                            class="project-progress-fill"
-                            style="width:45%;">
-
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        class="open-project"
-                        data-project-id="SAP-2026-0002">
-
-                        Open Project
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </button>
-
-
-                </article>
-
-
-
-                <!-- PROJECT CARD 3 -->
-
-                <article
-                    class="project-card"
-                    data-project="Infosys Bangalore">
-
-
-                    <div class="project-card-top">
-
-                        <span class="project-status qc">
-                            Quality Check
-                        </span>
-
-                        <button
-                            class="card-menu">
-
-                            <i class="fa-solid fa-ellipsis"></i>
-
-                        </button>
-
-                    </div>
-
-
-                    <h2>
-                        Infosys Bangalore
-                    </h2>
-
-                    <p class="project-number">
-                        SAP-2026-0003
-                    </p>
-
-
-                    <div class="project-details">
-
-                        <div>
-
-                            <i class="fa-solid fa-building"></i>
-
-                            <span>
-                                Infosys
-                            </span>
-
-                        </div>
-
-                        <div>
-
-                            <i class="fa-solid fa-user"></i>
-
-                            <span>
-                                Amit
-                            </span>
-
-                        </div>
-
-                        <div>
-
-                            <i class="fa-regular fa-calendar"></i>
-
-                            <span>
-                                10 Sep 2026
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="project-progress-info">
-
-                        <span>
-                            Progress
-                        </span>
-
-                        <strong>
-                            68%
-                        </strong>
-
-                    </div>
-
-
-                    <div class="project-progress">
-
-                        <div
-                            class="project-progress-fill"
-                            style="width:68%;">
-
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        class="open-project"
-                        data-project-id="SAP-2026-0003">
-
-                        Open Project
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </button>
-
-
-                </article>
-
-
-            </section>
-
-
-        </main>
-
-    </div>
+    </main>
 
 
 </div>
 
 
-
-<!-- =========================================================
+<!-- =====================================================
      JAVASCRIPT
-========================================================= -->
+===================================================== -->
 
 <script src="../../assets/js/database.js"></script>
 
-<script src="../../assets/js/projectboard.js"></script>
+<script src="projectboard.js"></script>
 
 
 </body>
