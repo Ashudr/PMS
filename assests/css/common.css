@@ -1,0 +1,416 @@
+/* =========================================================
+   PMS COMMON APPLICATION LAYOUT
+   SHARED HEADER + SIDEBAR
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:'Poppins', sans-serif;
+
+    background:#f4f7fb;
+
+    color:#1e293b;
+
+}
+
+
+/* =========================================================
+   TOP HEADER
+========================================================= */
+
+.top-header{
+
+    height:72px;
+
+    background:#ffffff;
+
+    border-bottom:1px solid #e2e8f0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 28px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+
+.logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.logo-area img{
+
+    width:42px;
+
+    height:42px;
+
+    object-fit:contain;
+
+}
+
+
+.logo-area h2{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#1e3a5f;
+
+}
+
+
+.logo-area p{
+
+    font-size:11px;
+
+    color:#64748b;
+
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+
+.header-icon-btn{
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#f1f5f9;
+
+    color:#475569;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+
+.header-icon-btn:hover{
+
+    background:#e2e8f0;
+
+}
+
+
+.profile-btn{
+
+    border:none;
+
+    background:#f1f5f9;
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-family:'Poppins', sans-serif;
+
+    color:#334155;
+
+}
+
+
+/* =========================================================
+   APPLICATION CONTAINER
+========================================================= */
+
+.app-container{
+
+    display:flex;
+
+    min-height:calc(100vh - 72px);
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar{
+
+    width:250px;
+
+    background:#ffffff;
+
+    border-right:1px solid #e2e8f0;
+
+    padding:22px 14px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex-shrink:0;
+
+}
+
+
+.menu-title{
+
+    font-size:11px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    color:#94a3b8;
+
+    padding:10px 12px;
+
+    margin-bottom:8px;
+
+}
+
+
+/* =========================================================
+   MENU ITEMS
+========================================================= */
+
+.menu-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:12px 14px;
+
+    margin-bottom:5px;
+
+    text-decoration:none;
+
+    color:#64748b;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    transition:all 0.2s ease;
+
+}
+
+
+.menu-item i{
+
+    width:20px;
+
+    text-align:center;
+
+    font-size:16px;
+
+}
+
+
+.menu-item:hover{
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+}
+
+
+.menu-item.active{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    box-shadow:0 5px 15px rgba(37,99,235,0.25);
+
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom{
+
+    margin-top:auto;
+
+    padding-top:20px;
+
+}
+
+
+.logout{
+
+    color:#dc2626;
+
+}
+
+
+.logout:hover{
+
+    background:#fef2f2;
+
+    color:#dc2626;
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content{
+
+    flex:1;
+
+    min-width:0;
+
+    padding:30px;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:24px;
+
+}
+
+
+.page-header h1{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#1e293b;
+
+}
+
+
+.page-header p{
+
+    margin-top:6px;
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .sidebar{
+
+        width:210px;
+
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .top-header{
+
+        padding:0 15px;
+
+    }
+
+    .sidebar{
+
+        width:70px;
+
+        padding:15px 8px;
+
+    }
+
+    .menu-item{
+
+        justify-content:center;
+
+        padding:14px 8px;
+
+    }
+
+    .menu-item span,
+
+    .menu-title{
+
+        display:none;
+
+    }
+
+    .main-content{
+
+        padding:20px 15px;
+
+    }
+
+    .logo-area p{
+
+        display:none;
+
+    }
+
+}
