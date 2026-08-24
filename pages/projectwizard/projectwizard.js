@@ -760,39 +760,30 @@ function updateReview() {
 
 function createProject() {
 
-    let projects =
-        JSON.parse(
-            localStorage.getItem(
-                "onepwsProjects"
-            )
-        ) || [];
-
-
     const projectToSave = {
 
         ...newProject,
 
-        createdDate:
-            new Date().toISOString(),
+        status: "Active",
 
-        status:
-            "Active",
-
-        progress:
-            0
+        progress: 0
 
     };
 
 
-    projects.push(
-        projectToSave
-    );
+    const savedProject =
+        addProject(projectToSave);
 
 
-    localStorage.setItem(
-        "onepwsProjects",
-        JSON.stringify(projects)
-    );
+    if (!savedProject) {
+
+        alert(
+            "Unable to create project. Project number may already exist."
+        );
+
+        return;
+
+    }
 
 
     alert(
