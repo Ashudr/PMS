@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ONEPWS | Task Board</title>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../assets/css/common.css">
+
+    <!-- Task Board CSS -->
+    <link rel="stylesheet" href="taskboard.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- ==========================================
+                    SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            <span>ONEPWS</span>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="../dashboard/dashboard.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../projectwizard/projectwizard.html">
+                        <i class="fa-solid fa-folder-plus"></i>
+                        Project Wizard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../projectboard/projectboard.html">
+                        <i class="fa-solid fa-table-columns"></i>
+                        Project Board
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="#">
+                        <i class="fa-solid fa-list-check"></i>
+                        Task Board
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../projectprogress/projectprogress.html">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        Progress Board
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../reports/reports.html">
+                        <i class="fa-solid fa-file-lines"></i>
+                        Reports
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../settings/settings.html">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- ==========================================
+                MAIN CONTENT
+    =========================================== -->
+
+    <main class="main-content">
+
+        <!-- Top Bar -->
+
+        <header class="topbar">
+
+            <div class="page-title">
+
+                <h1>Task Board</h1>
+
+                <p>
+                    Manage every project task in one place
+                </p>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchTask"
+                        placeholder="Search Project, Customer or Task...">
+
+                </div>
+
+                <button id="notificationBtn" class="icon-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </button>
+
+                <button id="userBtn" class="icon-btn">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </button>
+
+                <button class="primary-btn" id="addTaskBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    New Task
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- Breadcrumb -->
+
+        <div class="breadcrumb">
+
+            Dashboard
+
+            <i class="fa-solid fa-angle-right"></i>
+
+            Task Board
+
+        </div>
+
+        <!-- ==========================================
+                    KPI CARDS
+        =========================================== -->
+
+        <section class="kpi-grid">
+
+            <div class="kpi-card">
+
+                <div class="kpi-icon blue">
+
+                    <i class="fa-solid fa-diagram-project"></i>
+
+                </div>
+
+                <div class="kpi-details">
+
+                    <span>Total Projects</span>
+
+                    <h2 id="totalProjects">154</h2>
+
+                </div>
+
+            </div>
+
+            <div class="kpi-card">
+
+                <div class="kpi-icon orange">
+
+                    <i class="fa-solid fa-spinner"></i>
+
+                </div>
+
+                <div class="kpi-details">
+
+                    <span>Active Tasks</span>
+
+                    <h2 id="activeTasks">46</h2>
+
+                </div>
+
+            </div>
+
+            <div class="kpi-card">
+
+                <div class="kpi-icon red">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                </div>
+
+                <div class="kpi-details">
+
+                    <span>Overdue</span>
+
+                    <h2 id="overdueTasks">8</h2>
+
+                </div>
+
+            </div>
+
+            <div class="kpi-card">
+
+                <div class="kpi-icon green">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <div class="kpi-details">
+
+                    <span>Completed</span>
+
+                    <h2 id="completedTasks">100</h2>
+
+                </div>
+
+            </div>
+
+            <div class="kpi-card">
+
+                <div class="kpi-icon purple">
+
+                    <i class="fa-solid fa-calendar-day"></i>
+
+                </div>
+
+                <div class="kpi-details">
+
+                    <span>Today's Tasks</span>
+
+                    <h2 id="todayTasks">18</h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+                    FILTER BAR
+        =========================================== -->
+
+        <section class="filter-bar">
+
+            <select id="priorityFilter">
+                <option value="">All Priorities</option>
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+            </select>
+
+            <select id="customerFilter">
+                <option value="">All Customers</option>
+            </select>
+
+            <select id="memberFilter">
+                <option value="">All Members</option>
+            </select>
+
+            <select id="sortTasks">
+                <option value="date">Sort By Date</option>
+                <option value="priority">Priority</option>
+                <option value="project">Project</option>
+            </select>
+
+        </section>
+
+        <!-- ==========================================
+                KANBAN BOARD STARTS
+        =========================================== -->
+
+        <section class="kanban-board">
+
+            <!-- ======================================================
+                            RFQ
+            ======================================================= -->
+            
+            <div class="kanban-column" data-status="RFQ">
+
+                <div class="column-header rfq">
+
+                    <div class="column-title">
+
+                        <i class="fa-solid fa-file-circle-plus"></i>
+
+                        <span>RFQ</span>
+
+                    </div>
+
+                    <span class="task-count" id="count-rfq">0</span>
+
+                </div>
+
+                <div class="card-container"
+                     id="rfqCards"
+                     data-column="RFQ">
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================================
+                        INFO MISSING
+            ======================================================= -->
+
+            <div class="kanban-column"
+                 data-status="INFO MISSING">
+
+                <div class="column-header info">
+
+                    <div class="column-title">
+
+                        <i class="fa-solid fa-circle-question"></i>
+
+                        <span>INFO MISSING</span>
+
+                    </div>
+
+                    <span class="task-count"
+                          id="count-info">0</span>
+
+                </div>
+
+                <div class="card-container"
+                     id="infoCards"
+                     data-column="INFO MISSING">
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================================
+                                WIP
+            ======================================================= -->
+
+            <div class="kanban-column"
+                 data-status="WIP">
+
+                <div class="column-header wip">
+
+                    <div class="column-title">
+
+                        <i class="fa-solid fa-gears"></i>
+
+                        <span>WIP</span>
+
+                    </div>
+
+                    <span class="task-count"
+                          id="count-wip">0</span>
+
+                </div>
+
+                <div class="card-container"
+                     id="wipCards"
+                     data-column="WIP">
+
+                </div>
+
+            </div>
+
+            <!-- ======================================================
+                                QC
+            ======================================================= -->
+
+            <div class="kanban-column" data-status="QC">
+
+                <div class="column-header qc">
+
+                    <div class="column-title">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        <span>QC</span>
+                    </div>
+
+                    <span class="task-count" id="count-qc">0</span>
+
+                </div>
+
+                <div class="card-container"
+                     id="qcCards"
+                     data-column="QC">
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================================
+                            RESOLVED
+            ======================================================= -->
+
+            <div class="kanban-column" data-status="RESOLVED">
+
+                <div class="column-header resolved">
+
+                    <div class="column-title">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>RESOLVED</span>
+                    </div>
+
+                    <span class="task-count" id="count-resolved">0</span>
+
+                </div>
+
+                <div class="card-container"
+                     id="resolvedCards"
+                     data-column="RESOLVED">
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================================
+                            COMPLETED
+            ======================================================= -->
+
+            <div class="kanban-column" data-status="COMPLETED">
+
+                <div class="column-header completed">
+
+                    <div class="column-title">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                        <span>COMPLETED</span>
+                    </div>
+
+                    <span class="task-count" id="count-completed">0</span>
+
+                </div>
+
+                <div class="card-container"
+                     id="completedCards"
+                     data-column="COMPLETED">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        
+<!-- ==========================================================
+TASK DETAILS MODAL
+========================================================== -->
+
+<div id="taskModal" class="task-modal-overlay">
+
+    <div class="task-modal">
+
+        <!-- Header -->
+
+        <div class="task-modal-header">
+
+            <div>
+
+                <h2 id="modalTaskTitle">Task Details</h2>
+
+                <p id="modalProjectNumber">Project No.</p>
+
+            </div>
+
+            <button id="closeModal" class="modal-close">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <!-- Tabs -->
+
+        <div class="task-tabs">
+
+            <button class="tab-btn active" data-tab="general">
+                General
+            </button>
+
+            <button class="tab-btn" data-tab="task">
+                Task
+            </button>
+
+            <button class="tab-btn" data-tab="documents">
+                Documents
+            </button>
+
+            <button class="tab-btn" data-tab="comments">
+                Comments
+            </button>
+
+            <button class="tab-btn" data-tab="history">
+                History
+            </button>
+
+            <button class="tab-btn" data-tab="settings">
+                Settings
+            </button>
+
+        </div>
+
+        <!-- BODY -->
+
+        <div class="task-modal-body">
+
+            <!-- GENERAL TAB -->
+
+            <div class="tab-content active" id="general">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>Project Number</label>
+
+                        <input type="text" id="projectNo">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Project Name</label>
+
+                        <input type="text" id="projectName">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Customer</label>
+
+                        <input type="text" id="customer">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Business Unit</label>
+
+                        <input type="text" id="businessUnit">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Module</label>
+
+                        <input type="text" id="moduleName">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Priority</label>
+
+                        <select id="priority">
+
+                            <option>High</option>
+                            <option>Medium</option>
+                            <option>Low</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Assigned To</label>
+
+                        <input type="text" id="assignedTo">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Status</label>
+
+                        <select id="status">
+
+                            <option>RFQ</option>
+                            <option>INFO MISSING</option>
+                            <option>WIP</option>
+                            <option>QC</option>
+                            <option>RESOLVED</option>
+                            <option>COMPLETED</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Start Date</label>
+
+                        <input type="date" id="startDate">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Due Date</label>
+
+                        <input type="date" id="endDate">
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Description</label>
+
+                    <textarea id="description" rows="6"></textarea>
+
+                </div>
+
+            </div>
+
+            <!-- Empty Tabs -->
+
+            <div class="tab-content" id="task"></div>
+
+            <div class="tab-content" id="documents"></div>
+
+            <div class="tab-content" id="comments"></div>
+
+            <div class="tab-content" id="history"></div>
+
+            <div class="tab-content" id="settings"></div>
+
+        </div>
+
+        <!-- Footer -->
+
+        <div class="task-modal-footer">
+
+            <button class="secondary-btn" id="deleteTask">
+    Delete
+</button>
+
+            <button class="secondary-btn" id="cancelModal">
+
+                Cancel
+
+            </button>
+
+            <button class="primary-btn" id="saveTask">
+    Save Changes
+</button>
+
+        </div>
+
+    </div>
+
+</div>
+        <!-- ==========================================
+                TOAST NOTIFICATION
+        =========================================== -->
+
+        <div id="toastContainer"></div>
+
+    </main>
+
+</div>
+
+<script src="taskboard.js"></script>
+
+</body>
+</html>
