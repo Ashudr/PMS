@@ -135,6 +135,38 @@ body{
 
 }
 
+/* ==========================================
+   ONEPWS LOGO
+========================================== */
+
+.logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+
+    padding:10px 15px 25px;
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+    margin-bottom:15px;
+}
+
+
+.onepws-logo{
+
+    width:150px;
+
+    max-width:100%;
+
+    height:auto;
+
+    object-fit:contain;
+
+    display:block;
+
+}
 
 .sidebar nav ul{
 
