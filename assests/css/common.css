@@ -1,6 +1,6 @@
 /* =========================================================
-   PMS COMMON APPLICATION LAYOUT
-   SHARED HEADER + SIDEBAR
+   PMS - COMMON APPLICATION LAYOUT
+   HEADER + SIDEBAR + MAIN CONTENT
 ========================================================= */
 
 *{
@@ -9,350 +9,273 @@
     box-sizing:border-box;
 }
 
-
+html,
 body{
-
-    font-family:'Poppins', sans-serif;
-
-    background:#f4f7fb;
-
-    color:#1e293b;
-
+    width:100%;
+    min-height:100%;
 }
 
+body{
+    font-family:"Poppins",sans-serif;
+    background:#f4f7fb;
+    color:#1e293b;
+}
 
 /* =========================================================
    TOP HEADER
 ========================================================= */
 
 .top-header{
-
     height:72px;
-
+    width:100%;
     background:#ffffff;
-
     border-bottom:1px solid #e2e8f0;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     padding:0 28px;
 
-    position:sticky;
-
-    top:0;
-
-    z-index:1000;
-
+    position:relative;
+    z-index:100;
 }
-
 
 .logo-area{
-
     display:flex;
-
     align-items:center;
-
     gap:12px;
-
 }
-
 
 .logo-area img{
-
     width:42px;
-
     height:42px;
-
     object-fit:contain;
-
+    display:block;
 }
-
 
 .logo-area h2{
-
+    margin:0;
     font-size:20px;
-
     font-weight:700;
-
-    color:#1e3a5f;
-
+    color:#1e293b;
+    letter-spacing:.5px;
 }
-
 
 .logo-area p{
-
+    margin:2px 0 0;
     font-size:11px;
-
     color:#64748b;
-
 }
 
-
 /* =========================================================
-   HEADER ACTIONS
+   HEADER RIGHT SIDE
 ========================================================= */
 
 .header-actions{
-
     display:flex;
-
     align-items:center;
-
-    gap:14px;
-
+    gap:12px;
 }
 
-
 .header-icon-btn{
+    width:42px;
+    height:42px;
 
-    width:40px;
-
-    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
     border:none;
-
     border-radius:10px;
 
     background:#f1f5f9;
-
     color:#475569;
 
     cursor:pointer;
-
     font-size:16px;
-
 }
-
 
 .header-icon-btn:hover{
-
     background:#e2e8f0;
-
 }
 
-
 .profile-btn{
+    display:flex;
+    align-items:center;
+    gap:8px;
 
     border:none;
-
     background:#f1f5f9;
 
-    padding:10px 15px;
+    padding:10px 14px;
 
     border-radius:10px;
 
-    cursor:pointer;
-
-    font-family:'Poppins', sans-serif;
-
     color:#334155;
+    font-family:"Poppins",sans-serif;
+    font-size:14px;
+    font-weight:500;
 
+    cursor:pointer;
 }
 
+.profile-btn:hover{
+    background:#e2e8f0;
+}
 
 /* =========================================================
-   APPLICATION CONTAINER
+   APPLICATION LAYOUT
 ========================================================= */
 
 .app-container{
-
     display:flex;
-
+    width:100%;
     min-height:calc(100vh - 72px);
-
 }
-
 
 /* =========================================================
    SIDEBAR
 ========================================================= */
 
 .sidebar{
-
     width:250px;
+    min-width:250px;
 
     background:#ffffff;
-
     border-right:1px solid #e2e8f0;
 
-    padding:22px 14px;
+    padding:20px 14px;
 
     display:flex;
-
     flex-direction:column;
 
-    flex-shrink:0;
-
+    min-height:calc(100vh - 72px);
 }
 
-
 .menu-title{
+    display:block;
+
+    padding:8px 12px 12px;
 
     font-size:11px;
-
-    font-weight:600;
-
+    font-weight:700;
     letter-spacing:1px;
 
     color:#94a3b8;
-
-    padding:10px 12px;
-
-    margin-bottom:8px;
-
 }
 
-
 /* =========================================================
-   MENU ITEMS
+   SIDEBAR MENU
 ========================================================= */
 
-.menu-item{
+.sidebar .menu-item{
+    width:100%;
 
     display:flex;
-
     align-items:center;
 
     gap:13px;
 
     padding:12px 14px;
+    margin:3px 0;
 
-    margin-bottom:5px;
+    border-radius:10px;
 
     text-decoration:none;
 
     color:#64748b;
 
-    border-radius:10px;
-
     font-size:14px;
-
     font-weight:500;
 
-    transition:all 0.2s ease;
-
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
 }
 
-
-.menu-item i{
-
+.sidebar .menu-item i{
     width:20px;
-
     text-align:center;
-
     font-size:16px;
-
 }
 
+.sidebar .menu-item span{
+    display:inline;
+}
 
-.menu-item:hover{
-
+.sidebar .menu-item:hover{
     background:#eff6ff;
-
     color:#2563eb;
-
+    transform:translateX(2px);
 }
 
-
-.menu-item.active{
-
-    background:#2563eb;
+.sidebar .menu-item.active{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
 
     color:#ffffff;
 
-    box-shadow:0 5px 15px rgba(37,99,235,0.25);
-
+    box-shadow:0 6px 16px rgba(37,99,235,.22);
 }
-
-
-/* =========================================================
-   SIDEBAR BOTTOM
-========================================================= */
 
 .sidebar-bottom{
-
     margin-top:auto;
-
     padding-top:20px;
-
+    border-top:1px solid #eef2f7;
 }
 
-
-.logout{
-
+.sidebar .menu-item.logout{
     color:#dc2626;
-
 }
 
-
-.logout:hover{
-
+.sidebar .menu-item.logout:hover{
     background:#fef2f2;
-
     color:#dc2626;
-
 }
-
 
 /* =========================================================
    MAIN CONTENT
 ========================================================= */
 
 .main-content{
-
     flex:1;
-
     min-width:0;
 
     padding:30px;
 
+    background:#f4f7fb;
     overflow-x:hidden;
-
 }
-
 
 /* =========================================================
    PAGE HEADER
 ========================================================= */
 
 .page-header{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     margin-bottom:24px;
-
 }
 
-
 .page-header h1{
+    margin:0;
 
     font-size:28px;
-
     font-weight:700;
 
     color:#1e293b;
-
 }
 
-
 .page-header p{
-
-    margin-top:6px;
+    margin:6px 0 0;
 
     color:#64748b;
 
     font-size:14px;
-
 }
-
 
 /* =========================================================
    RESPONSIVE
@@ -361,56 +284,49 @@ body{
 @media(max-width:900px){
 
     .sidebar{
+        width:220px;
+        min-width:220px;
+    }
 
-        width:210px;
-
+    .main-content{
+        padding:24px;
     }
 
 }
 
-
 @media(max-width:700px){
 
     .top-header{
-
         padding:0 15px;
-
     }
 
     .sidebar{
-
         width:70px;
+        min-width:70px;
 
         padding:15px 8px;
-
     }
 
-    .menu-item{
-
-        justify-content:center;
-
-        padding:14px 8px;
-
-    }
-
-    .menu-item span,
-
-    .menu-title{
-
+    .menu-title,
+    .sidebar .menu-item span{
         display:none;
+    }
 
+    .sidebar .menu-item{
+        justify-content:center;
+        padding:14px 8px;
+    }
+
+    .sidebar .menu-item i{
+        width:auto;
     }
 
     .main-content{
-
         padding:20px 15px;
-
     }
 
     .logo-area p{
-
         display:none;
-
     }
 
 }
