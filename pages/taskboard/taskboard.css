@@ -69,71 +69,6 @@ body{
 }
 
 
-/* ==========================================================
-   SIDEBAR
-========================================================== */
-
-.sidebar{
-
-    width:250px;
-
-    min-height:100vh;
-
-    background:var(--sidebar);
-
-    color:#ffffff;
-
-    padding:24px 16px;
-
-    position:fixed;
-
-    left:0;
-    top:0;
-    bottom:0;
-
-    overflow-y:auto;
-
-    z-index:100;
-
-}
-
-
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    padding:8px 10px 28px;
-
-    font-size:23px;
-
-    font-weight:700;
-
-    letter-spacing:.5px;
-
-}
-
-
-.logo i{
-
-    width:42px;
-    height:42px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    background:var(--primary);
-
-    border-radius:12px;
-
-    font-size:19px;
-
-}
 
 /* ==========================================
    ONEPWS LOGO
@@ -1684,4 +1619,167 @@ body{
 
     }
 
+}
+
+/* ==========================================================
+   TASK BOARD - DASHBOARD SIDEBAR MATCH
+========================================================== */
+
+.sidebar{
+    width:260px;
+    min-width:260px;
+
+    background:#ffffff;
+
+    border-right:1px solid #e2e8f0;
+
+    padding:20px 16px;
+
+    display:flex;
+    flex-direction:column;
+
+    flex-shrink:0;
+
+    box-shadow:2px 0 8px rgba(15,23,42,.03);
+}
+
+
+/* LOGO AREA */
+
+.sidebar-logo{
+    width:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:4px 8px 22px;
+
+    margin-bottom:12px;
+
+    border-bottom:1px solid #eef2f7;
+}
+
+
+.sidebar-logo-img{
+    display:block;
+
+    width:150px;
+    max-width:100%;
+
+    height:auto;
+
+    object-fit:contain;
+}
+
+
+/* MENU TITLE */
+
+.sidebar .menu-title{
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    color:#94a3b8;
+
+    padding:8px 12px;
+
+    margin-bottom:6px;
+}
+
+
+/* MENU ITEMS */
+
+.sidebar .menu-item{
+    width:100%;
+
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    min-height:46px;
+
+    padding:0 14px;
+
+    margin-bottom:5px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    color:#475569;
+
+    font-size:14px;
+    font-weight:500;
+
+    transition:.2s ease;
+}
+
+
+.sidebar .menu-item i{
+    width:20px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:15px;
+}
+
+
+.sidebar .menu-item:hover{
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    transform:translateX(2px);
+}
+
+
+.sidebar .menu-item:hover i{
+    color:#2563eb;
+}
+
+
+/* ACTIVE TASK BOARD */
+
+.sidebar .menu-item.active{
+    background:#2563eb;
+
+    color:#ffffff;
+
+    box-shadow:0 7px 18px rgba(37,99,235,.22);
+}
+
+
+.sidebar .menu-item.active i{
+    color:#ffffff;
+}
+
+
+/* LOGOUT */
+
+.sidebar-bottom{
+    margin-top:auto;
+
+    padding-top:18px;
+}
+
+
+.sidebar .menu-item.logout{
+    color:#dc2626;
+}
+
+
+.sidebar .menu-item.logout i{
+    color:#dc2626;
+}
+
+
+.sidebar .menu-item.logout:hover{
+    background:#fef2f2;
+
+    color:#dc2626;
 }

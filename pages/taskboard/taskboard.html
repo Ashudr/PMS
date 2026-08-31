@@ -33,75 +33,89 @@
 
     <aside class="sidebar">
 
-        <div class="logo">
+    <div class="sidebar-logo">
 
-    <img 
-        src="../../assets/images/onepws-logo.png"
-        alt="ONEPWS Logo"
-        class="onepws-logo">
+        <img
+            src="../../assets/images/onepws-logo.png"
+            alt="ONEPWS Logo"
+            class="sidebar-logo-img">
 
-</div>
+    </div>
 
-        <nav>
+    <div class="menu-title">
+        MAIN MENU
+    </div>
 
-            <ul>
+    <a href="../dashboard/dashboard.html"
+       class="menu-item">
 
-                <li>
-                    <a href="../dashboard/dashboard.html">
-                        <i class="fa-solid fa-chart-line"></i>
-                        Dashboard
-                    </a>
-                </li>
+        <i class="fa-solid fa-table-columns"></i>
+        <span>Dashboard</span>
 
-                <li>
-                    <a href="../projectwizard/projectwizard.html">
-                        <i class="fa-solid fa-folder-plus"></i>
-                        Project Wizard
-                    </a>
-                </li>
+    </a>
 
-                <li>
-                    <a href="../projectboard/projectboard.html">
-                        <i class="fa-solid fa-table-columns"></i>
-                        Project Board
-                    </a>
-                </li>
+    <a href="../projectboard/projectboard.html"
+       class="menu-item">
 
-                <li>
-                    <a href="../progressboard/progressboard.html">
-                        <i class="fa-solid fa-chart-pie"></i>
-                        Progress Board
-                    </a>
-                </li>
+        <i class="fa-solid fa-diagram-project"></i>
+        <span>Project Board</span>
 
-                <li class="active">
-                    <a href="#">
-                        <i class="fa-solid fa-list-check"></i>
-                        Task Board
-                    </a>
-                </li>
+    </a>
 
-                
+    <a href="../progressboard/progressboard.html"
+       class="menu-item">
 
-                <li>
-                    <a href="../reports/reports.html">
-                        <i class="fa-solid fa-file-lines"></i>
-                        Reports
-                    </a>
-                </li>
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Progress Board</span>
 
-                <li>
-                    <a href="../settings/settings.html">
-                        <i class="fa-solid fa-gear"></i>
-                        Settings
-                    </a>
-                </li>
+    </a>
 
-            </ul>
+    <a href="../projectwizard/projectwizard.html"
+       class="menu-item">
 
-        </nav>
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <span>Project Wizard</span>
 
-    </aside>
+    </a>
+
+    <a href="../taskboard/taskboard.html"
+       class="menu-item active">
+
+        <i class="fa-solid fa-list-check"></i>
+        <span>Task Board</span>
+
+    </a>
+
+    <a href="../reports/reports.html"
+       class="menu-item">
+
+        <i class="fa-solid fa-chart-pie"></i>
+        <span>Reports</span>
+
+    </a>
+
+    <a href="../settings/settings.html"
+       class="menu-item">
+
+        <i class="fa-solid fa-gear"></i>
+        <span>Settings</span>
+
+    </a>
+
+    <div class="sidebar-bottom">
+
+        <a href="#"
+           class="menu-item logout"
+           id="logoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+
+        </a>
+
+    </div>
+
+</aside>
 
     <!-- ==========================================
                 MAIN CONTENT
